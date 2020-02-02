@@ -1,0 +1,17 @@
+.PackageDetail {
+  padding: 25px;
+  overflow:hidden;
+  width: 30%;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  min-height:170px;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.5em;
+}
+
+
+@media screen and (max-width: 400px) {
+   .PackageDetail { 
+    width:auto;   
+  }
+}

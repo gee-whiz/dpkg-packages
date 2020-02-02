@@ -1,0 +1,30 @@
+.Packages {
+  float:left;
+  width: auto;
+}
+
+.Package {
+    margin-top: 0px;
+    width: auto;
+    padding-left: 25px;
+    margin: 8px;
+}
+
+.PackageLink {
+    padding: 10px;
+}
+
+.PackageLink:hover {
+    border-right: 2px solid dimgray;
+    background-color: lightgray;
+}
+
+
+@media screen and (max-width: 400px) {
+   .Packages { 
+    float: none;
+    width:auto;
+    border:0;
+    border-bottom:2px;    
+  }
+}
