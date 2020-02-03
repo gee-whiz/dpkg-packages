@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import Package from './components/Packages/Package';
-import PackageDetail from './components/PackageDetail/PackageDetail';
+import PackagesContainer from './container/PackagesContainer';
 
 function App() {
   return (
     <div className="App">
-      <Package />
-      <PackageDetail />
+      <PackagesContainer />
+
     </div>
   );
 }

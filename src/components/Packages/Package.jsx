@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-import classes from './Package.module.css'
+import styles from './Package.module.css'
 
-const packageNames = () => {
+const packageNames = (props) => {
+    const selectedPackageId = props.packages[props.selectedIndex].id
+    const packageNames = Object.keys(props.packages)
+        .map(packageKey => {
+            return (
+                <div
+                    key={packageKey}
+                    className={styles.PackageLink}
+                    onClick={event => props.clicked(event, packageKey)}
+                    style={props.packages[packageKey].id === selectedPackageId ?
+                        { backgroundColor: 'gray', color: 'white' } : { hover: 'lightgray' }}>
+                    {props.packages[packageKey].name}
+                </div>
+            );
+        });
+
     return (
-        <div className={classes.Packages}>
-            <div className={classes.Package}>
-                <h2>Packages</h2>
-                <div className={classes.PackageLink}>libws-commons-util-java</div>
-                <div className={classes.PackageLink}>python-pkg-resources</div>
-                <div className={classes.PackageLink}>tcpd</div>
-                <div className={classes.PackageLink}>libbsf-java</div>
-                <div className={classes.PackageLink}>libaspectj-java</div>
-                <div className={classes.PackageLink}>libslf4j-java</div>
-            </div>
+        <div className={styles.Packages}>
+            <h3 className={styles.H3}>Packages</h3>
+            <div style={{ backgroundColor: 'lightgray', height: '1px' }} ></div>
+            {packageNames}
         </div>
     );
 
